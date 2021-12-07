@@ -11,8 +11,15 @@ Special Thanks to Gandalf and other people in the Hoj discord server for helping
 module Heap_Heap
 
 
-struct Heap_Heap{base_size, layer}
 
+mutable struct Heap_Heap{base_size, layer, dtype}
+    base_array::Union{Vector{dtype}, Nothing}
+    summary::Union{Heap_Heap{base_size, layer-1, dtype}, Nothing}
+    data::Union{Vector{Heap_Heap{base_size, layer-1, dtype, Nothing}}}
+    function Heap_Heap{size, layer, dtype}() where{layer == 0}
+        x = new()
+        x.base_array = Vector{dtype}()
+    end
 end
 
 
