@@ -7,12 +7,10 @@ Special Thanks to Gandalf and other people in the Hoj discord server for helping
 
 
 =#
-abstract type Heap_Heap_unit{Dtype} end
 
 
 
-
-mutable struct Base_layer{Dtype}<:Heap_Heap_unit{Dtype}
+mutable struct Base_layer{Dtype}
     data::Vector{Dtype}
 end
 
@@ -24,3 +22,5 @@ end
 
 
 Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_Heap_type(Dtype, x-1)}
+
+
