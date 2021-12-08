@@ -7,14 +7,20 @@ Special Thanks to Gandalf and other people in the Hoj discord server for helping
 
 
 =#
+abstract type Heap_Heap_unit{Dtype} end
 
 
-mutable struct Heap_Heap{Dtype}
-    base_array::Union{Vector{Dtype}, Nothing}
-    summary::Union{Heap_Heap{Dtype}, Nothing}
-    data::Union{Vector{Heap_Heap{Dtype}},Nothing}
 
+
+mutable struct Base_layer{Dtype}<:Heap_Heap_unit{Dtype}
+    data::Vector{Dtype}
 end
 
 
+mutable struct Heap_layer{sub_layer}
+    summary::sub_layer
+    data::Vector{sub_layer}
+end
 
+
+Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_Heap_type(Dtype, x-1)}
