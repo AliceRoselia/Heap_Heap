@@ -10,15 +10,13 @@ Special Thanks to Gandalf and other people in the Hoj discord server for helping
 
 module My_Heap_Heap
 
-
-
 mutable struct Heap_Heap{base_size, layer, dtype}
     base_array::Union{Vector{dtype}, Nothing}
     summary::Union{Heap_Heap{base_size, layer-1, dtype}, Nothing}
     data::Union{Vector{Heap_Heap{base_size, layer-1, dtype, Nothing}}}
-    @inline function Heap_Heap{base_size, layer, dtype}(;In_layer=layer)
+    @inline function Heap_Heap(; base_size, In_layer, dtype)
         #I will change this to generated function later if the compiler fails to optimize away the branches
-        x = new()
+        x = new{base_size, In_layer-1, dtype}(;base_size = base_size, In_layer = In_layer-1, dtype = dtype)
         if In_layer == 0
 
             x.base_array = Vector{dtype}()
@@ -26,7 +24,7 @@ mutable struct Heap_Heap{base_size, layer, dtype}
             x.data = Nothing
         else
             x.base_array = Nothing
-            x.summary = new(;In_layer = In_layer-1, dtype = dtype)
+            x.summary = new{base_size, In_layer-1, dtype}(;In_layer = In_layer-1, dtype = dtype)
             
         end
     end
