@@ -12,6 +12,10 @@ Special Thanks to Gandalf and other people in the Hoj discord server for helping
 
 mutable struct Base_layer{Dtype}
     data::Vector{Dtype}
+    function Base_layer{Dtype}() where {Dtype}
+        x = new{Dtype}()
+        x.data = Vector{Dtype}()
+    end
 end
 
 
