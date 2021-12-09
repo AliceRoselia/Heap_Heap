@@ -7,6 +7,7 @@ The purpose of this implementation:
     priority_queue, despite being one crucial data structure in many applications 
     (pathfinding, best-first-search, etc) has not been optimized for modern cpu architectures.
     Commonly used heaps (pairing heap, binary heap) has poor data locality. 
+    Moreover, this makes heavy use of inlining, making it fast.
 
 This is a minimum viable version. 
 
