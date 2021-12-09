@@ -6,7 +6,7 @@ Special Thanks to Gandalf and other people in the Hoj discord server for helping
 The purpose of this implementation:
     priority_queue, despite being one crucial data structure in many applications 
     (pathfinding, best-first-search, etc) has not been optimized for modern cpu architectures.
-    Commonly used heap (pairing heap, binary heap) has poor data locality. 
+    Commonly used heaps (pairing heap, binary heap) has poor data locality. 
 
 This is a minimum viable version. 
 
