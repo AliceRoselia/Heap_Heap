@@ -45,7 +45,8 @@ Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_H
     mindex::UInt8 = 1
     maxdex::UInt8 = X.size
     if x.size >= Base_size
-        println("Working in progress.") 
+        println("Working in progress.")
+        #Still working in progress. After this insert function is done, splitting is needed.
     end
 
     while mindex < maxdex
