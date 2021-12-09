@@ -16,9 +16,11 @@ This is a minimum viable version. The base array could be preallocated, for exam
 
 mutable struct Base_layer{Dtype, Base_size}
     data::Vector{Dtype}
+    size::UInt8
     function Base_layer{Dtype, Base_size}() where {Dtype,Base_size}
         x = new{Dtype,Base_size}()
         x.data = Vector{Dtype}(undef,Base_size)
+        x.size = 0
         x
     end
 end
