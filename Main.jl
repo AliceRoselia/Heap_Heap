@@ -45,12 +45,15 @@ Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_H
     mindex::UInt8 = 1
     maxdex::UInt8 = Base_size
     while mindex < maxdex
-        middex = (mindex+maxdex)/2
+        middex = (mindex+maxdex)>>1
         if cmp(content, X.data[middex])
             maxdex = middex
         else
             mindex = middex+1
+        end
     end
+    #TODO: test the binary search to ensure no mistake happens.
+    
     
 end
 
