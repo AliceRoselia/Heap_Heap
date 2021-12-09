@@ -7,7 +7,7 @@ Special Thanks to Gandalf and other people in the Hoj discord server for helping
 
 
 
-This is a minimum viable version. The base array could be preallocated, for example.
+This is a minimum viable version. 
 
 
 =#
