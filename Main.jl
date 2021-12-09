@@ -38,7 +38,7 @@ Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_H
 
 
 
-@inline function push!(X::Base_layer{Dtype, Base_size, cmp}) where {Dtype, Base_size, cmp}
+@inline function push!(X::Base_layer{Dtype, Base_size, cmp}, content::Dtype) where {Dtype, Base_size, cmp}
     #Binary search the array to insert.
     println("Working in progress.")
     #Wait, can I also unroll this too? #Later. 
@@ -46,6 +46,7 @@ Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_H
     maxdex::UInt8 = Base_size
     while true
         middex = (mindex+maxdex)/2
+        if cmp()
     end
     
 end
