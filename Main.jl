@@ -39,7 +39,9 @@ Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_H
 function push!(X::Base_layer{Dtype, Base_size, cmp}) where {Dtype, Base_size, cmp}
     #Binary search the array to insert.
     println("Working in progress.")
-
+    mindex = 1
+    maxdex = Base_size
+    
 end
 
 function pop!(X::Base_layer)
