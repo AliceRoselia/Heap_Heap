@@ -46,7 +46,10 @@ Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_H
     maxdex::UInt8 = Base_size
     while true
         middex = (mindex+maxdex)/2
-        if cmp()
+        if cmp(content, X.data[middex])
+            maxdex = middex
+        else
+            mindex = middex
     end
     
 end
