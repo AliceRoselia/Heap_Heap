@@ -35,6 +35,9 @@ function push!(X::Base_layer)
 end
 
 function pop!(X::Base_layer)
+    data = X.data[1]
+    X = X[2:end] #May need optimization. I don't know how Julia arrays are implemented.
+    return data
     #return the first element.
 end
 
