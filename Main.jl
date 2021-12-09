@@ -44,6 +44,10 @@ Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_H
     #Wait, can I also unroll this too? #Later. 
     mindex::UInt8 = 1
     maxdex::UInt8 = X.size
+    if x.size >= Base_size
+        println("Working in progress.") 
+    end
+
     while mindex < maxdex
         middex = (mindex+maxdex)>>1
         if cmp(content, X.data[middex])
