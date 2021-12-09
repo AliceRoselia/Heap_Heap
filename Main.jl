@@ -42,8 +42,11 @@ Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_H
     #Binary search the array to insert.
     println("Working in progress.")
     #Wait, can I also unroll this too? #Later. 
-    mindex = 1
-    maxdex = Base_size
+    mindex::UInt8 = 1
+    maxdex::UInt8 = Base_size
+    while true
+        middex = (mindex+maxdex)/2
+    end
     
 end
 
