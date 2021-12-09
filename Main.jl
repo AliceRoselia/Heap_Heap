@@ -1,11 +1,12 @@
 #= 
 This is an implementation of a priority_queue data structure, customized for modern cpu architectures
 
-
 Special Thanks to Gandalf and other people in the Hoj discord server for helping me out.
 
-
-
+The purpose of this implementation:
+    priority_queue, despite being one crucial data structure in many applications 
+    (pathfinding, best-first-search, etc) has not been optimized for modern cpu architectures
+    
 
 This is a minimum viable version. 
 
