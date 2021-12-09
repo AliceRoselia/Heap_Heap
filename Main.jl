@@ -28,3 +28,16 @@ end
 Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_Heap_type(Dtype, x-1)}
 
 
+
+function push!(X::Base_layer)
+    #Binary search the array to insert.
+    println("Working in progress.")
+end
+
+function pop!(X::Base_layer)
+    #return the first element.
+end
+
+function peek(X::Base_layer)
+    return X.data[1]
+end
