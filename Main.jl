@@ -6,15 +6,20 @@ Special Thanks to Gandalf and other people in the Hoj discord server for helping
 
 
 
+
+This is a minimum viable version. The base array could be preallocated, for example.
+
+
 =#
 
 
 
-mutable struct Base_layer{Dtype}
+mutable struct Base_layer{Dtype, Base_size}
     data::Vector{Dtype}
-    function Base_layer{Dtype}() where {Dtype}
-        x = new{Dtype}()
-        x.data = Vector{Dtype}()
+    function Base_layer{Dtype, Base_size}() where {Dtype,Base_size}
+        x = new{Dtype,Base_size}()
+        x.data = Vector{Dtype}(undef,Base_size)
+        x
     end
 end
 
