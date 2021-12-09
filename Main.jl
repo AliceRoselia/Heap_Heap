@@ -43,7 +43,8 @@ end
 
 function pop!(X::Base_layer)
     data = X.data[1]
-    X = X[2:end] #May need optimization. I don't know how Julia arrays are implemented.
+    X[1:end-1] = X[2:end] #May need optimization. I don't know how Julia arrays are implemented.
+    X.size -= 1
     return data
     #return the first element.
 end
