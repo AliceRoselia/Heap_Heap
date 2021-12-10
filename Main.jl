@@ -14,9 +14,9 @@ This is a minimum viable version.
 #Decrease_key is possible, but would require altering the elements/heaps to be aware of their locations.
 There are several ways of doing this.
 1) Making a handle class which contains the information and the data, then specialize the dispatch in case the heap stores that handle.
-2) Making a pointer back to the parent heap.
+2) Making a pointer back to the parent heap. 
 3) Storing the information of the position somewhere.
-
+4) Make a lookup table storing position for key positions.
 2) is likely the most efficient option, but not gonna do it here.
 =#
 
