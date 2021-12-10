@@ -36,6 +36,7 @@ end
 
 
 mutable struct Heap_layer{sub_layer}
+    #TODO, fix summary to make it point to appropriate vector.
     summary::sub_layer
     data::Vector{sub_layer}
 end
