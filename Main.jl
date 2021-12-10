@@ -94,6 +94,6 @@ end
     #return the first element.
 end
 
-function peek(X::Base_layer)
+@inline function peek(X::Base_layer)
     return X.data[1]
 end
