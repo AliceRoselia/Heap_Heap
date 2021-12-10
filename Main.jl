@@ -48,6 +48,15 @@ end
     println("Working in progress.")
     #Wait, can I also unroll this too? #Later. 
     #TODO: Fix cases for X being final element.
+    if X.size == 0
+        X.size = 1
+        X.data[1] = content
+        return
+    elseif !(cmp(content,X.data[X.size])
+        X.size += 1
+        X.data[X.size] = content
+        return
+    end
 
 
 
