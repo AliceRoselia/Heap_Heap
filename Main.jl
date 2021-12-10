@@ -27,9 +27,11 @@ struct summary_key{Dtype}
     key::Int
     data::Dtype
 end
-
-for i in (:<, :==, :>, :<=, :>=)
-    @eval :(Base.($i)(a::summary_key, b::summary_key) = ($i)(a.data, b.data))
+syms = [:<, :(==) , :>, :<=, :>=]
+for i in syms
+    println(i)
+    Temp = :(Base.$i(a::summary_key, b::summary_key) = $i(a.data, b.data))
+    eval(Temp)
 end
 
 mutable struct Base_layer{Dtype, Base_size, cmp}
