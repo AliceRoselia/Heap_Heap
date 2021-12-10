@@ -19,13 +19,14 @@ This is a minimum viable version.
 mutable struct Base_layer{Dtype, Base_size, cmp}
     data::Vector{Dtype}
     size::UInt8
-    function Base_layer{Dtype, Base_size, cmp}() where {Dtype,Base_size}
+    function Base_layer{Dtype, Base_size, cmp}() where {Dtype,Base_size, cmp}
         x = new{Dtype,Base_size, cmp}()
         x.data = Vector{Dtype}(undef,Base_size)
         x.size = 0
         x
     end
 end
+
 
 
 mutable struct Heap_layer{sub_layer}
