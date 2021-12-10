@@ -17,6 +17,7 @@ There are several ways of doing this.
 2) Making a pointer back to the parent heap.
 3) Storing the information of the position somewhere.
 
+2) is likely the most efficient option, but not gonna do it here.
 =#
 
 
