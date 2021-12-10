@@ -22,6 +22,15 @@ There are several ways of doing this.
 
 
 
+
+struct summary_key{Dtype}
+    key::Int
+    data::Dtype
+end
+
+
+
+
 mutable struct Base_layer{Dtype, Base_size, cmp}
     data::Vector{Dtype}
     size::UInt8
