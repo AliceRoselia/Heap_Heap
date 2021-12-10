@@ -9,7 +9,7 @@ function binsearch_insert(X, data, cmp = <)
     maxdex = X.size
     while mindex < maxdex
         middex = (mindex+maxdex)>>1
-        if cmp(content, X.data[middex])
+        if cmp(content, X[middex])
             maxdex = middex
         else
             mindex = middex+1
