@@ -28,9 +28,9 @@ struct summary_key{Dtype}
     data::Dtype
 end
 
-
-Base.:<(a::summary_key, b::summary_key) = <(a.data, b.data)
-
+for i in (:<, :==, :>, :<=, :>=)
+    @eval :(Base.($i)(a::summary_key, b::summary_key) = ($i)(a.data, b.data))
+end
 
 mutable struct Base_layer{Dtype, Base_size, cmp}
     data::Vector{Dtype}
