@@ -15,6 +15,7 @@ This is a minimum viable version.
 There are several ways of doing this.
 1) Making a handle class which contains the information and the data, then specialize the dispatch in case the heap stores that handle.
 2) Making a pointer back to the parent heap.
+3) Storing the information of the position.
 
 =#
 
