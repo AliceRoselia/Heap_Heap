@@ -66,7 +66,6 @@ Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_H
     X.size += 1
     X.data[middex+1:end] =  X.data[middex:end-1]
     X.data[middex] = content
-    
 end
 
 function pop!(X::Base_layer)
