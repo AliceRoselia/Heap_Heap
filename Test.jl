@@ -7,5 +7,8 @@ include("Main.jl")
 A = Base_layer{Int, 32, <}()
 
 push!(A, 25)
-
+push!(A,47)
+push!(A,72)
+push!(A,29)
+push!(A,3)
 display(A)

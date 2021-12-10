@@ -47,6 +47,10 @@ end
     #Binary search the array to insert.
     println("Working in progress.")
     #Wait, can I also unroll this too? #Later. 
+    #TODO: Fix cases for X being final element.
+
+
+
     mindex::UInt8 = 1
     maxdex::UInt8 = X.size
     #if x.size >= Base_size
