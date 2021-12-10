@@ -29,6 +29,7 @@ struct summary_key{Dtype}
 end
 
 
+Base.:<(a::summary_key, b::summary_key) = <(a.data, b.data)
 
 
 mutable struct Base_layer{Dtype, Base_size, cmp}
@@ -44,14 +45,14 @@ end
 
 
 
-mutable struct Heap_layer{sub_layer}
+mutable struct Heap_layer{sub_layer, summary_layer}
     #TODO, fix summary to make it point to appropriate vector.
-    summary::sub_layer
+    summary::summary_layer
     data::Vector{sub_layer}
 end
 
 
-Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_Heap_type(Dtype, x-1)}
+Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_Heap_type(Dtype, x-1), Heap_Heap_type(summary_key{Dtype}, x-1)}
 
 
 
