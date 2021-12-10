@@ -11,6 +11,7 @@ The purpose of this implementation:
 
 This is a minimum viable version. 
 
+#Decrease_key is possible, but would require altering the elements/heaps to be aware of their locations.
 
 =#
 
