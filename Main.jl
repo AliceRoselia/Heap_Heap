@@ -52,13 +52,12 @@ end
         X.size = 1
         X.data[1] = content
         return
-    elseif !(cmp(content,X.data[X.size])
+    elseif !cmp(content,X.data[X.size])
         X.size += 1
         X.data[X.size] = content
         return
+    
     end
-
-
 
     mindex::UInt8 = 1
     maxdex::UInt8 = X.size
