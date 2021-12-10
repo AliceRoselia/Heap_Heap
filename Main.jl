@@ -29,9 +29,8 @@ struct summary_key{Dtype}
 end
 syms = [:<, :(==) , :>, :<=, :>=]
 for i in syms
-    println(i)
-    Temp = :(Base.$i(a::summary_key, b::summary_key) = $i(a.data, b.data))
-    eval(Temp)
+
+    @eval Base.$i(a::summary_key, b::summary_key) = $i(a.data, b.data)
 end
 
 mutable struct Base_layer{Dtype, Base_size, cmp}
@@ -54,6 +53,8 @@ mutable struct Heap_layer{sub_layer, summary_layer}
 end
 
 
+#TODO: fix this.
+#Make the function definition works.
 Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_Heap_type(Dtype, x-1), Heap_Heap_type(summary_key{Dtype}, x-1)}
 
 
