@@ -40,7 +40,7 @@ Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_H
 
 @inline function need_splitting(X::Base_layer{Dtype, Base_size, cmp}) where {Dtype, Base_size, cmp}
     return X.size >= Base_size #Maybe replace this with == for improved performance? Considering that X.size only increases by one each time.
-
+end
 @inline function push!(X::Base_layer{Dtype, Base_size, cmp}, content::Dtype) where {Dtype, Base_size, cmp}
     #This does not need splitting.
     #Binary search the array to insert.
