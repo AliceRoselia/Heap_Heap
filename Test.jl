@@ -6,4 +6,4 @@
 
 include("Main.jl")
 
-A = Main.Base_layer{Int, 32, <}()
+A = Base_layer{Int, 32, <}()
