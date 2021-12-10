@@ -6,4 +6,4 @@
 
 using Main
 
-A = Base_layer()
+A = Main.Base_layer{Int, 32, <}()
