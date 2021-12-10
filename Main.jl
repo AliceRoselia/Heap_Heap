@@ -62,13 +62,14 @@ Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_H
         end
     end
     #TODO: test the binary search to ensure no mistake happens.
-    
+    X.data[middex+1:end] =  X.data[middex:end-1]
+    X.data[middex]
     
 end
 
 function pop!(X::Base_layer)
     data = X.data[1]
-    X[1:end-1] = X[2:end] #May need optimization. I don't know how Julia arrays are implemented.
+    X[1:end-1] = X[2:end] #May need optimiza tion.I don't know how Julia arrays are implemented.
     X.size -= 1
     return data
     #return the first element.
