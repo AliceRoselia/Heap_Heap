@@ -65,8 +65,8 @@ end
     #TODO: test the binary search to ensure no mistake happens.
     #May replace "end" with "X.size"
     X.size += 1
-    X.data[middex+1:end] =  X.data[middex:end-1]
-    X.data[middex] = content
+    X.data[mindex+1:end] =  X.data[mindex:end-1]
+    X.data[mindex] = content
 end
 
 function pop!(X::Base_layer)
