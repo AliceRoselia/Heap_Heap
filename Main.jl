@@ -27,12 +27,14 @@ struct summary_key{Dtype}
     key::UInt
     data::Dtype
 end
+
+#=
 syms = [:<, :(==) , :>, :<=, :>=]
 for i in syms
-
     @eval Base.$i(a::summary_key, b::summary_key) = $i(a.data, b.data)
 end
-
+No longer needed, the cmp function will now be generated during type compute.
+=#
 mutable struct Base_layer{Dtype, Base_size, cmp}
     data::Vector{Dtype}
     size::UInt8
