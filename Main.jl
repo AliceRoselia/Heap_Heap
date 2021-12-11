@@ -24,7 +24,7 @@ There are several ways of doing this.
 
 
 struct summary_key{Dtype}
-    key::Int
+    key::UInt
     data::Dtype
 end
 syms = [:<, :(==) , :>, :<=, :>=]
@@ -57,12 +57,15 @@ end
 #Make the function definition works.
 #Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_Heap_type(Dtype, x-1), Heap_Heap_type(summary_key{Dtype}, x-1)}
 
-function Heap_Heap_type(Dtype::Type, x::Integer, cmp::Function)
+function Heap_Heap_type(Dtype::Type, x::Integer, cmp::Function, Base_size::UInt8 = 32)
     if x==0
-        return Base_layer{Dtype, cmp}
+        return Base_layer{Dtype, Base_size, cmp}
     else
         @inline cmp_key(a,b) = cmp(a.data, b.data)
-        return Heap_layer{Heap_Heap_type(Dtype, x-1, cmp), Heap_Heap_type(summary_key{Dtype}, x-1, cmp_key)}
+        return Heap_layer{Heap_Heap_type(Dtype, x-1, cmp, Base_size), Heap_Heap_type(summary_key{Dtype}, x-1, cmp_key, Base_size)}
+    end
+end
+
 
 
 
