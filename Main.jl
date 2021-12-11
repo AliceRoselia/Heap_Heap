@@ -57,7 +57,7 @@ end
 #Make the function definition works.
 #Heap_Heap_type(Dtype, x::Integer) = x==0 ? Base_layer{Dtype} : Heap_layer{Heap_Heap_type(Dtype, x-1), Heap_Heap_type(summary_key{Dtype}, x-1)}
 
-function Heap_Heap_type(Dtype::Type, x::Integer, cmp::Function, Base_size::UInt8 = 32)
+function Heap_Heap_type(Dtype::Type, x::Integer, cmp::Function, Base_size::UInt8 = UInt8(32))
     if x==0
         return Base_layer{Dtype, Base_size, cmp}
     else
