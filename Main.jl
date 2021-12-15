@@ -143,6 +143,7 @@ end
 end
 
 
-@inline function push!(X::Heap_layer)
+@inline function pop!(X::Heap_layer)
+    #Pop the 1st one, then the summary heap.
     println("Working in progress")
 end
