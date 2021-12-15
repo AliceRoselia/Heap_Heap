@@ -88,7 +88,6 @@ end
     #Binary search the array to insert.
     #println("Working in progress.")
     #Wait, can I also unroll this too? #Later. 
-    #TODO: Fix cases for X being final element.
     if X.size == 0
         X.size = 1
         X.data[1] = content
@@ -110,7 +109,7 @@ end
             mindex = middex+1
         end
     end
-    #May replace "end" with "X.size"
+    #May replace "end" with "X.size" (careful consideration needed)
     X.size += 1
     X.data[mindex+1:end] =  X.data[mindex:end-1]
     X.data[mindex] = content
@@ -133,4 +132,17 @@ end
     return X.data[1]
 end
 
-@inline function 
+@inline function push!(X::Heap_layer)
+    println("Working in progress")
+end
+
+
+@inline function length(X::Heap_layer)
+    #Might not even store X, in which case, it is 0.
+    println("Working in progress")
+end
+
+
+@inline function push!(X::Heap_layer)
+    println("Working in progress")
+end
