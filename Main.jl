@@ -69,7 +69,7 @@ function Heap_Heap_type(Dtype::Type, x::Integer, cmp::Function, Base_size::Integ
     end
 end
 
-@inline function max_size(::Base_layer{Dtype, Base_size, cmp})::Uint where {Dtype, Base_size, cmp}
+@inline function max_size(::Base_layer{Dtype, Base_size, cmp})::UInt where {Dtype, Base_size, cmp}
     return Base_size
 end
 
