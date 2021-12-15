@@ -75,8 +75,8 @@ end
     return Base_size
 end
 
-@inline function max_size(::Heap_layer{sub_layer, summary_layer})::UInt where {sub_layer, summary_layer}
-    return max_size(sub_layer)^2
+@inline function max_size(A::Heap_layer{sub_layer, summary_layer})::UInt where {sub_layer, summary_layer}
+    return max_size(A.summary)^2
 end
 
 
