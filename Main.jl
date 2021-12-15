@@ -52,8 +52,8 @@ mutable struct Heap_layer{sub_layer, summary_layer}
     summary::summary_layer
     data::Vector{sub_layer}
     function Heap_layer{sub_layer, summary_layer} where {sub_layer, summary_layer}
-        x = new{sub_layer, summary_layer}
-        x.data = Vector{}(undef, max_size(x))
+        x = new{sub_layer, summary_layer}()
+        x.data = Vector{sub_layer}(undef, max_size(x.summary))
         #Still todo.
     end
 end
