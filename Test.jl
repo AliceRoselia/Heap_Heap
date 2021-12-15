@@ -17,3 +17,5 @@ display(A)
 Fst_layer_type = Heap_Heap_type(Int, 1, <)
 
 A = Fst_layer_type()
+
+display(A.data)
