@@ -14,7 +14,7 @@ push!(A,3)
 push!(A,152)
 display(A)
 
-Fst_layer_type = Heap_Heap_type(Int, 1, <)
+Fst_layer_type = Heap_Heap_type(Int, 2, <)
 
 A = Fst_layer_type()
 
