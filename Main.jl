@@ -147,3 +147,7 @@ end
     #Pop the 1st one, then the summary heap.
     println("Working in progress")
 end
+
+@inline function peek(X::Heap_layer)
+    return peek(X.summary)
+end
