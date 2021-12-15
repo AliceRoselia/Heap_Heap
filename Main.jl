@@ -51,6 +51,11 @@ mutable struct Heap_layer{sub_layer, summary_layer}
     #TODO, fix summary to make it point to appropriate vector.
     summary::summary_layer
     data::Vector{sub_layer}
+    function Heap_layer{sub_layer, summary_layer} where {sub_layer, summary_layer}
+        x = new{sub_layer, summary_layer}
+        x.data = Vector{}(undef, max_size(x))
+        #Still todo.
+    end
 end
 
 
@@ -63,7 +68,13 @@ function Heap_Heap_type(Dtype::Type, x::Integer, cmp::Function, Base_size::Integ
     end
 end
 
+@inline function max_size(::Base_layer{Dtype, Base_size, cmp})::Uint where {Dtype, Base_size, cmp}
+    return Base_size
+end
 
+@inline function max_size(::Heap_layer{sub_layer, summary_layer})::UInt where {sub_layer, summary_layer}
+    return max_size(sub_layer)^2
+end
 
 
 @inline function need_splitting(X::Base_layer{Dtype, Base_size, cmp}) where {Dtype, Base_size, cmp}
