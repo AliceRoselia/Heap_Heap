@@ -102,11 +102,6 @@ end
 
     mindex::UInt8 = 1
     maxdex::UInt8 = X.size
-    #if x.size >= Base_size
-        #println("Working in progress.")
-        #Still working in progress. After this insert function is done, splitting is needed.
-    #end
-
     while mindex < maxdex
         middex = (mindex+maxdex)>>1
         if cmp(content, X.data[middex])
@@ -115,7 +110,6 @@ end
             mindex = middex+1
         end
     end
-    #TODO: test the binary search to ensure no mistake happens.
     #May replace "end" with "X.size"
     X.size += 1
     X.data[mindex+1:end] =  X.data[mindex:end-1]
@@ -138,3 +132,5 @@ end
 @inline function peek(X::Base_layer)
     return X.data[1]
 end
+
+@inline function 
