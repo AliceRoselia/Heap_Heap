@@ -84,7 +84,7 @@ end
 @inline function push!(X::Base_layer{Dtype, Base_size, cmp}, content::Dtype) where {Dtype, Base_size, cmp}
     #This does not need splitting.
     #Binary search the array to insert.
-    println("Working in progress.")
+    #println("Working in progress.")
     #Wait, can I also unroll this too? #Later. 
     #TODO: Fix cases for X being final element.
     if X.size == 0
