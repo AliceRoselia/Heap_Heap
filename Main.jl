@@ -54,7 +54,7 @@ mutable struct Heap_layer{sub_layer, summary_layer}
 end
 
 
-function Heap_Heap_type(Dtype::Type, x::Integer, cmp::Function, Base_size::UInt8 = UInt8(32))
+function Heap_Heap_type(Dtype::Type, x::Integer, cmp::Function, Base_size::Integer = UInt8(32))
     if x==0
         return Base_layer{Dtype, Base_size, cmp}
     else
