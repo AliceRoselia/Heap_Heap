@@ -149,5 +149,5 @@ end
 end
 
 @inline function peek(X::Heap_layer)
-    return peek(X.summary)
+    return peek(X.summary).data
 end
