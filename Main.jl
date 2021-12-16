@@ -120,6 +120,10 @@ end
     return X.size 
 end
 
+@inline function empty(X::Base_layer)
+    return length(X)
+end
+
 @inline function pop!(X::Base_layer)
     data = X.data[1]
     #May replace "end" with "X.size"
@@ -171,6 +175,9 @@ end
     println("Working in progress")
 end
 
+@inline function empty(X::Heap_layer)
+    return empty(X.summary)
+end
 
 @inline function pop!(X::Heap_layer)
     #Pop the 1st one, then the summary heap.
