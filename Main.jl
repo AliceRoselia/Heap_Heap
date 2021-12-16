@@ -147,8 +147,8 @@ end
             mindex = middex+1
         end
     end
-    X.data[1:mindex-1] = X.data[2:mindex]
-    X.data[mindex] = content
+    X.data[1:mindex-2] = X.data[2:mindex-1]
+    X.data[mindex-1] = content
     #What to do next?
     return Out
 end
