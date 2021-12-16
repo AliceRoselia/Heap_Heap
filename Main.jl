@@ -113,6 +113,7 @@ end
     X.size += 1
     X.data[mindex+1:end] =  X.data[mindex:end-1]
     X.data[mindex] = content
+    return
 end
 
 @inline function length(X::Base_layer)
