@@ -135,11 +135,14 @@ end
 
 @inline function replace!(X::Base_layer{Dtype, Base_size, cmp}, content::Dtype) where {Dtype, Base_size, cmp}
     #pop one element, then push one element in, like python's heapq.
-
+    Out::Dtype = X.data[1]
     if !cmp(content,X.data[X.size])
         #In last element, needs to be taken care of separately.
+        X.data[1:X.size-1] = X.data[2:X.size]
+        X.data[X.size] = content
+        return Out
     end
-    Out::Dtype = X.data[1]
+    
     mindex::UInt8 = 2 #The 1st element will be popped out regardless. The element this can come before is the 2nd element onward.
     #No need for special case of size 1: this will be tackled.
     maxdex::UInt8 = X.size
