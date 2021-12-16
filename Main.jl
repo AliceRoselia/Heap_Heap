@@ -133,7 +133,7 @@ end
 end
 
 @inline function replace!(X::Base_layer{Dtype, Base_size, cmp}, content::Dtype) where {Dtype, Base_size, cmp}
-    
+    #pop one element, then push one element in, like python's heapq.
 end
 
 @inline function push!(X::Heap_layer)
