@@ -136,7 +136,7 @@ end
 @inline function replace!(X::Base_layer{Dtype, Base_size, cmp}, content::Dtype) where {Dtype, Base_size, cmp}
     #pop one element, then push one element in, like python's heapq.
     Out::Dtype = X.data[1]
-    mindex::UInt8 = 1
+    mindex::UInt8 = 2
     maxdex::UInt8 = X.size
     #The 1st element shouldn't matter because it gets popped anyway?
     while mindex < maxdex
