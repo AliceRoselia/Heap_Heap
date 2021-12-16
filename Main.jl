@@ -132,6 +132,10 @@ end
     return X.data[1]
 end
 
+@inline function replace!(X::Base_layer{Dtype, Base_size, cmp}, content::Dtype) where {Dtype, Base_size, cmp}
+    
+end
+
 @inline function push!(X::Heap_layer)
     println("Working in progress")
 end
