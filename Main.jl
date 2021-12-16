@@ -180,3 +180,7 @@ end
 @inline function peek(X::Heap_layer)
     return peek(X.summary).data
 end
+
+@inline function replace!(X::Heap_layer)
+    # 
+end
