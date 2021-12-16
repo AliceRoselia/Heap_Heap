@@ -137,7 +137,14 @@ end
     Out::Dtype = X.data[1]
     mindex::UInt8 = 1
     maxdex::UInt8 = X.size
-
+    while mindex < maxdex
+        middex = (mindex+maxdex)>>1
+        if cmp(content, X.data[middex])
+            maxdex = middex
+        else
+            mindex = middex+1
+        end
+    end
 end
 
 @inline function push!(X::Heap_layer)
