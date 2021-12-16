@@ -137,7 +137,7 @@ end
     Out::Dtype = X.data[1]
     mindex::UInt8 = 1
     maxdex::UInt8 = X.size
-    #The 1st element doesn't matter because it gets popped anyway.
+    #The 1st element shouldn't matter because it gets popped anyway?
     while mindex < maxdex
         middex = (mindex+maxdex)>>1
         if cmp(content, X.data[middex])
