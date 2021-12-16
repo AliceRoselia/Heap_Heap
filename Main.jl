@@ -134,6 +134,10 @@ end
 
 @inline function replace!(X::Base_layer{Dtype, Base_size, cmp}, content::Dtype) where {Dtype, Base_size, cmp}
     #pop one element, then push one element in, like python's heapq.
+    Out::Dtype = X.data[1]
+    mindex::UInt8 = 1
+    maxdex::UInt8 = X.size
+
 end
 
 @inline function push!(X::Heap_layer)
