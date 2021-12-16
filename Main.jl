@@ -182,5 +182,5 @@ end
 end
 
 @inline function replace!(X::Heap_layer)
-    # 
+    # Replace the pointed heap then replace the summary.
 end
