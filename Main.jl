@@ -26,6 +26,7 @@ There are several ways of doing this.
 struct summary_key{Dtype}
     key::UInt
     data::Dtype
+    summary_key(a::Integer, b::Dtype) = new{Dtype}(a,b)
 end
 
 #=
@@ -186,6 +187,7 @@ end
     if empty(sub_heap)
         pop!(X.summary)
     else
+        new_summary_key = summary_key
         #replace!(X.summary, peek(sub_heap))
         #The type is still wrong.
     end
