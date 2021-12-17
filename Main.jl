@@ -189,7 +189,6 @@ end
         pop!(X.summary)
     else
         replace!(X.summary, summary_key(summary_peek.key, peek(sub_heap)))
-        #The type is still wrong.
     end
     return out
 
@@ -204,8 +203,6 @@ end
     sub_heap = X.data[summary_peek.key]
     out = replace!(sub_heap, content)
     replace!(X.summary, summary_key(summary_peek.key, content))
-    #replace!(X.summary, peek(sub_heap))
-    #The type is still wrong.
     return out
     # Replace the pointed heap then replace the summary.
 end
