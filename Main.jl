@@ -182,20 +182,24 @@ end
 @inline function pop!(X::Heap_layer)
     #Pop the 1st one, then the summary heap.
     sub_heap = X.data[peek(X.summary).key]
-    content = pop!(sub_heap)
+    out = pop!(sub_heap)
     if empty(sub_heap)
         pop!(X.summary)
     else
-        replace!(X.summary, peek(sub_heap))
+        #replace!(X.summary, peek(sub_heap))
+        #The type is still wrong.
     end
-    return content
-    
+    return out
+
 end
 
 @inline function peek(X::Heap_layer)
     return peek(X.summary).data
 end
 
-@inline function replace!(X::Heap_layer)
+@inline function replace!(X::Heap_layer, content)
+    sub_heap = X.data[peek(X.summary).key]
+    out = replace!(sub_heap, content)
+    
     # Replace the pointed heap then replace the summary.
 end
