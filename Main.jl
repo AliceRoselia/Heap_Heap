@@ -200,8 +200,10 @@ end
 end
 
 @inline function replace!(X::Heap_layer, content)
-    sub_heap = X.data[peek(X.summary).key]
+    summary_peek = peek(X.summary)
+    sub_heap = X.data[summary_peek.key]
     out = replace!(sub_heap, content)
+    replace!(X.summary, summary_key(summary_peek.key, content))
     #replace!(X.summary, peek(sub_heap))
     #The type is still wrong.
     return out
