@@ -181,10 +181,15 @@ end
 
 @inline function pop!(X::Heap_layer)
     #Pop the 1st one, then the summary heap.
-    #sub_heap = X.data[peek(X.summary).key]
-    #content = 
-
-    println("Working in progress")
+    sub_heap = X.data[peek(X.summary).key]
+    content = pop!(sub_heap)
+    if empty(sub_heap)
+        pop!(X.summary)
+    else
+        replace!(X.summary, peek(sub_heap))
+    end
+    return content
+    
 end
 
 @inline function peek(X::Heap_layer)
