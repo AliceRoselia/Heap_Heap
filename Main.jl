@@ -26,7 +26,7 @@ There are several ways of doing this.
 struct summary_key{Dtype}
     key::UInt
     data::Dtype
-    summary_key(a::Integer, b::Dtype) = new{Dtype}(a,b)
+    summary_key(a::Integer, b::Dtype) where{Dtype} = new{Dtype}(a,b)
 end
 
 #=
