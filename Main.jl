@@ -197,7 +197,9 @@ end
         #Do_something
         new_one = split!(sub_heap)
         push!(sub_heap, content)
-        push!(X.summary, )
+        #Get new summary key.
+        
+        #push!(X.summary, )
         println("Working in progress")
     else
         push!(sub_heap, content)
@@ -208,6 +210,7 @@ end
 @inline function length(X::Heap_layer)
     #Might not even store X, in which case, it is 0.
     println("Working in progress")
+    return length(X.summary)
 end
 
 @inline function empty(X::Heap_layer)
