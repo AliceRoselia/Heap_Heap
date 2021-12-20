@@ -222,7 +222,7 @@ end
     #Pop the 1st one, then the summary heap.
     X.size -= 1
     summary_peek = peek(X.summary)
-    sub_heap = X.data[summary_peek.key]
+    sub_heap = summary_peek.key
     out = pop!(sub_heap)
     if empty(sub_heap)
         pop!(X.summary)
