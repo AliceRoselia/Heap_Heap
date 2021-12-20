@@ -166,6 +166,10 @@ end
     return Out
 end
 
+@inline function need_splitting(X::Heap_layer)
+    return need_splitting(X.summary)
+end
+
 @inline function push!(X::Heap_layer)
     println("Working in progress")
 end
