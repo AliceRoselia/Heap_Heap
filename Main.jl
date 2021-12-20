@@ -173,8 +173,11 @@ end
 
 @inline function split!(X::Base_layer{Dtype, Base_size, cmp})
     #create one new base layers.
+    #Assumes full X.
     new_one = Base_layer{Dtype, Base_size, cmp}()
-    
+    cutoff = div(Base_size, 2)
+    new_one.size = Base_size-cutoff
+    new_one[]
     return new_one
 end
 
