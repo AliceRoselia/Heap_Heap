@@ -74,7 +74,8 @@ function Heap_Heap_type(Dtype::Type, x::Integer, cmp::Function, Base_size::Integ
         return Base_layer{Dtype, Base_size, cmp}
     else
         @inline cmp_key(a,b) = cmp(a.data, b.data)
-        return Heap_layer{Heap_Heap_type(Dtype, x-1, cmp, Base_size), Heap_Heap_type(summary_key{Dtype}, x-1, cmp_key, Base_size)}
+        sub_heap_type = Heap_Heap_type(Dtype, x-1, cmp, Base_size)
+        return Heap_layer{sub_heap_type, Heap_Heap_type(summary_key{sub_heap_type,Dtype}, x-1, cmp_key, Base_size)}
     end
 end
 
