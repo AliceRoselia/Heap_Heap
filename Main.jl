@@ -195,6 +195,9 @@ end
     sub_heap = X.data[summary_peek.key]
     if need_splitting(sub_heap)
         #Do_something
+        new_one = split!(sub_heap)
+        push!(sub_heap, content)
+        push!(X.summary, )
         println("Working in progress")
     else
         push!(sub_heap, content)
