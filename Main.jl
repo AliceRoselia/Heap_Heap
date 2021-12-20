@@ -57,12 +57,12 @@ mutable struct Heap_layer{sub_layer, summary_layer}
     #TODO, fix summary to make it point to appropriate vector.
     summary::summary_layer
     data::Vector{sub_layer}
-    #size::UInt
+    size::UInt
     function Heap_layer{sub_layer, summary_layer}() where {sub_layer, summary_layer}
         x = new{sub_layer, summary_layer}()
         x.summary = summary_layer()
         x.data = Vector{sub_layer}(undef, max_size(x.summary))
-        #x.size = 0
+        x.size = 0
         x
     end
 end
@@ -188,7 +188,7 @@ end
 
 
 @inline function push!(X::Heap_layer, content)
-    
+    X.size += 1
     
     
     summary_peek = peek(X.summary)
@@ -209,8 +209,7 @@ end
 
 @inline function length(X::Heap_layer)
     #Might not even store X, in which case, it is 0.
-    #This is internal length only. Don't try to mess with it.
-    return length(X.summary)
+    return X.size
 end
 
 @inline function empty(X::Heap_layer)
@@ -219,6 +218,7 @@ end
 
 @inline function pop!(X::Heap_layer)
     #Pop the 1st one, then the summary heap.
+    X.size -= 1
     summary_peek = peek(X.summary)
     sub_heap = X.data[summary_peek.key]
     out = pop!(sub_heap)
