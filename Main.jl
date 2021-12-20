@@ -18,6 +18,11 @@ There are several ways of doing this.
 3) Storing the information of the position somewhere.
 4) Make a lookup table storing position for key positions.
 2) is likely the most efficient option, but not gonna do it here.
+
+
+
+There are also many ways to "defrag", such as by "transposing", merging, etc... but not doing it here either.
+Even merging likely not implemented.
 =#
 
 
