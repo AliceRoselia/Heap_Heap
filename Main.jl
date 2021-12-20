@@ -171,8 +171,16 @@ end
 end
 
 
-@inline function push!(X::Heap_layer)
+@inline function push!(X::Heap_layer, content)
+    
     println("Working in progress")
+    
+    summary_peek = peek(X.summary)
+    sub_heap = X.data[summary_peek.key]
+    if need_splitting(sub_heap)
+        #Do_something
+    else
+        push!(sub_heap, content)
 end
 
 
