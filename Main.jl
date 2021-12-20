@@ -209,8 +209,8 @@ end
 
 @inline function length(X::Heap_layer)
     #Might not even store X, in which case, it is 0.
-    println("Working in progress")
-    return 
+    #This is internal length only. Don't try to mess with it.
+    return length(X.summary)
 end
 
 @inline function empty(X::Heap_layer)
