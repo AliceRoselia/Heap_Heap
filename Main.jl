@@ -129,7 +129,7 @@ end
 end
 
 @inline function empty(X::Base_layer)
-    return length(X)
+    return length(X) == 0
 end
 
 @inline function pop!(X::Base_layer)
@@ -215,7 +215,7 @@ end
 end
 
 @inline function empty(X::Heap_layer)
-    return empty(X.summary)
+    return length(X) == 0
 end
 
 @inline function pop!(X::Heap_layer)
