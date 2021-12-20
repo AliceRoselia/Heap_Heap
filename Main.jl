@@ -69,6 +69,7 @@ end
 
 
 function Heap_Heap_type(Dtype::Type, x::Integer, cmp::Function, Base_size::Integer = UInt8(32))
+    #TODO: Fix summary key thing.
     if x==0
         return Base_layer{Dtype, Base_size, cmp}
     else
