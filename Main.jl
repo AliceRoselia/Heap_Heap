@@ -166,6 +166,10 @@ end
     return Out
 end
 
+@inline function split!(X::Base_layer{Dtype, Base_size, cmp})
+    
+end
+
 @inline function need_splitting(X::Heap_layer)
     return need_splitting(X.summary)
 end
