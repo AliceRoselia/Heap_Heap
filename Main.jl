@@ -56,7 +56,7 @@ end
 mutable struct Heap_layer{sub_layer, summary_layer}
     #TODO, fix summary to make it point to appropriate vector.
     summary::summary_layer
-    data::Vector{sub_layer}
+    #data::Vector{sub_layer} Fixing the issue.
     size::UInt
     function Heap_layer{sub_layer, summary_layer}() where {sub_layer, summary_layer}
         x = new{sub_layer, summary_layer}()
