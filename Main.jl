@@ -168,6 +168,9 @@ end
 
 @inline function split!(X::Base_layer{Dtype, Base_size, cmp})
     #create one new base layers.
+    new_one = Base_layer{Dtype, Base_size, cmp}()
+    
+    return new_one
 end
 
 @inline function need_splitting(X::Heap_layer)
