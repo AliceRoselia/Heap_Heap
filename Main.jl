@@ -224,6 +224,7 @@ end
     out = pop!(sub_heap)
     if empty(sub_heap)
         pop!(X.summary)
+        #Todo: make sure the data stays in place. 
     else
         replace!(X.summary, summary_key(summary_peek.key, peek(sub_heap)))
     end
