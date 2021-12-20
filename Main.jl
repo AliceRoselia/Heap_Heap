@@ -194,7 +194,7 @@ end
     
     
     summary_peek = peek(X.summary)
-    sub_heap = X.data[summary_peek.key]
+    sub_heap = summary_peek.key
     if need_splitting(sub_heap)
         #Do_something
         new_one = split!(sub_heap)
