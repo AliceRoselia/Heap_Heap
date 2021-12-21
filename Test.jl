@@ -19,8 +19,9 @@ for i in 1:32
     push!(A,i)
 end
 
-display(A)
-
+#display(A)
+#=
 for i in 1:30
     println(pop!(A))
 end
+=#

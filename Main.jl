@@ -180,7 +180,9 @@ end
     new_one = Base_layer{Dtype, Base_size, cmp}()
     cutoff = div(Base_size, 2)
     new_one.size = Base_size-cutoff
-    new_one.data = X.data[cutoff+1:end]
+    new_one.data[1:new_one.size] = X.data[cutoff+1:end]
+    println(X.data)
+    println(new_one.data)
     X.size = cutoff
     return new_one
 end
