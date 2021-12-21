@@ -96,11 +96,13 @@ end
     #Binary search the array to insert.
     #println("Working in progress.")
     #Wait, can I also unroll this too? #Later. 
+    #=
     if X.size == 0
         X.size = 1
         X.data[1] = content
         return
-    elseif !cmp(content,X.data[X.size])
+    else=#
+    if !cmp(content,X.data[X.size])
         X.size += 1
         X.data[X.size] = content
         return
