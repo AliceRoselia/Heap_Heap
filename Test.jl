@@ -6,13 +6,14 @@ include("Main.jl")
 
 
 
-Fst_layer_type = Heap_Heap_type(Int, 2, <)
+Fst_layer_type = Heap_Heap_type(Int, 1, <)
 
 A = Fst_layer_type()
 
 display(A)
 
 
+#Issue: pushing into empty heap
 for i in 1:35
     push!(A,i)
 end
