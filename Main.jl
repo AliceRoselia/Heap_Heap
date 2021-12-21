@@ -235,7 +235,7 @@ end
     out = pop!(sub_heap)
     if empty(sub_heap)
         pop!(X.summary)
-        println("Working in progress")
+        #println("Working in progress")
         #Todo: make sure the data stays in place. 
     else
         replace!(X.summary, summary_key(summary_peek.key, peek(sub_heap)))
