@@ -57,12 +57,12 @@ mutable struct Heap_layer{sub_layer, summary_layer}
     #TODO, fix summary to make it point to appropriate vector.
     summary::summary_layer
     #data::Vector{sub_layer} Fixing the issue.
-    size::UInt
+    #size::UInt
     function Heap_layer{sub_layer, summary_layer}() where {sub_layer, summary_layer}
         x = new{sub_layer, summary_layer}()
         x.summary = summary_layer()
         #x.data = Vector{sub_layer}(undef, max_size(x.summary))
-        x.size = 0
+        #x.size = 0
         x
     end
 end
@@ -222,11 +222,11 @@ end
 
 @inline function length(X::Heap_layer)
     #Might not even store X, in which case, it is 0.
-    return X.size
+    #return X.size
 end
 
 @inline function empty(X::Heap_layer)
-    return length(X) == 0
+    return empty(X.summary)
 end
 
 @inline function pop!(X::Heap_layer)
