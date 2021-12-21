@@ -14,7 +14,9 @@ display(A)
 
 
 #Issue: pushing into empty heap
-for i in 1:35
+#=
+for i in 1:2
     push!(A,i)
 end
+=#
 display(A)
