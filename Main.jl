@@ -61,7 +61,7 @@ mutable struct Heap_layer{sub_layer, summary_layer}
     function Heap_layer{sub_layer, summary_layer}() where {sub_layer, summary_layer}
         x = new{sub_layer, summary_layer}()
         x.summary = summary_layer()
-        x.data = Vector{sub_layer}(undef, max_size(x.summary))
+        #x.data = Vector{sub_layer}(undef, max_size(x.summary))
         x.size = 0
         x
     end

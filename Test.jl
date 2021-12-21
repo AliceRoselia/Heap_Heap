@@ -10,7 +10,7 @@ Fst_layer_type = Heap_Heap_type(Int, 2, <)
 
 A = Fst_layer_type()
 
-display(A.data)
+display(A)
 
 
 for i in 1:35
