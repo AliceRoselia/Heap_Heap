@@ -6,7 +6,7 @@ include("Main.jl")
 
 
 
-Fst_layer_type = Heap_Heap_type(Int, 1, <)
+Fst_layer_type = Heap_Heap_type(Int, 1, <, 32)
 
 A = Fst_layer_type()
 
