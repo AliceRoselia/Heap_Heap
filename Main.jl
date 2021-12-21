@@ -205,6 +205,7 @@ end
         #println("Working in progress")
     else
         push!(sub_heap, content)
+    end
     return
 end
 
