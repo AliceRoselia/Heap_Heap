@@ -252,7 +252,7 @@ end
     summary_peek = peek(X.summary)
     sub_heap = summary_peek.key
     out = replace!(sub_heap, content)
-    replace!(X.summary, summary_key(sub_heap, content))
+    replace!(X.summary, summary_key(sub_heap, peek(sub_heap)))
     return out
     # Replace the pointed heap then replace the summary.
 end
@@ -266,3 +266,29 @@ end
 
 
 #Trust the compiler.
+@inline function debug_print(X)
+    print(X, " ")
+end
+@inline function debug_print(X::summary_key)
+    #println("Summary key with key:")
+    #print("key = ")
+    #debug_print(X.key)
+    print("data = ")
+    debug_print(X.data)
+end
+@inline function debug_print(X::Base_layer)
+    #println("Base layer:")
+    #println(typeof(X))
+    println("[")
+    for i in 1:X.size
+        debug_print(X.data[i])
+        print(",")
+    end
+    println("]")
+end
+
+@inline function debug_print(X::Heap_layer)
+    #println("Heap layer with summary:")
+    print("summary = ")
+    debug_print(X.summary)
+end
