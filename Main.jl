@@ -193,8 +193,7 @@ end
 
 
 @inline function push!(X::Heap_layer{sub_layer, summary_layer}, content) where {sub_layer, summary_layer}
-    X.size += 1
-    
+    #X.size += 1
     if empty(X.summary)
         new_one = sub_layer()
         push!(new_one, content)
@@ -231,7 +230,7 @@ end
 
 @inline function pop!(X::Heap_layer)
     #Pop the 1st one, then the summary heap.
-    X.size -= 1
+    #X.size -= 1
     summary_peek = peek(X.summary)
     sub_heap = summary_peek.key
     out = pop!(sub_heap)
