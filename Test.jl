@@ -20,8 +20,9 @@ for i in 1:32
 end
 
 #display(A)
-#=
+
 for i in 1:30
     println(pop!(A))
 end
-=#
+
+
