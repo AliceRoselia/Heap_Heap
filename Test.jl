@@ -14,7 +14,8 @@ A = Fst_layer_type()
 
 #Issue: pushing into empty heap
 
-for i in 1:100
+for i in 1:16
+    println(i)
     push!(A,i)
     display(peek(peek(A.summary.summary).key).key)
 end
@@ -22,7 +23,7 @@ end
 #display(A)
 
 
-for i in 1:50
+for i in 1:16
     println(pop!(A))
     display(peek(peek(A.summary.summary).key).key)
 end
