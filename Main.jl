@@ -208,7 +208,7 @@ end
         push!(sub_heap, content)
         #Get new summary key.
         
-        push!(X.summary, new_one)
+        push!(X.summary, summary_key(new_one, content))
         #println("Working in progress")
     else
         push!(sub_heap, content)
