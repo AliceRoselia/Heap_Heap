@@ -21,8 +21,11 @@ end
 
 #display(A)
 
+
 for i in 1:2000
     println(pop!(A))
 end
+
+
 
 
