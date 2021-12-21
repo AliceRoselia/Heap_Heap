@@ -6,7 +6,7 @@ include("Main.jl")
 
 
 
-Fst_layer_type = Heap_Heap_type(Int, 1, <, 32)
+Fst_layer_type = Heap_Heap_type(Int, 2, <, 32)
 
 A = Fst_layer_type()
 
@@ -15,7 +15,7 @@ display(A)
 
 #Issue: pushing into empty heap
 
-for i in 1:40
+for i in 1:4000
     push!(A,i)
 end
 
