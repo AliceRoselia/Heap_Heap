@@ -15,14 +15,14 @@ display(A)
 
 #Issue: pushing into empty heap
 
-for i in 1:4000
+for i in 1:1000
     push!(A,i)
 end
 
 #display(A)
 
 
-for i in 1:2000
+for i in 1:500
     println(pop!(A))
 end
 
