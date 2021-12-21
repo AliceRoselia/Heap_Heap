@@ -251,9 +251,9 @@ end
 
 @inline function replace!(X::Heap_layer, content)
     summary_peek = peek(X.summary)
-    sub_heap = X.data[summary_peek.key]
+    sub_heap = summary_peek.key
     out = replace!(sub_heap, content)
-    replace!(X.summary, summary_key(summary_peek.key, content))
+    replace!(X.summary, summary_key(sub_heap, content))
     return out
     # Replace the pointed heap then replace the summary.
 end
