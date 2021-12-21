@@ -14,9 +14,13 @@ display(A)
 
 
 #Issue: pushing into empty heap
-#=
-for i in 1:2
+
+for i in 1:35
     push!(A,i)
 end
-=#
+
 display(A)
+
+for i in 1:33
+    println(pop!(A))
+end
