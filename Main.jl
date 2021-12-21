@@ -189,10 +189,11 @@ end
 end
 
 
-@inline function push!(X::Heap_layer, content)
+@inline function push!(X::Heap_layer{sub_layer, summary_layer}, content) where {sub_layer, summary_layer}
     X.size += 1
     
     if empty(X.summary)
+        new_one = sub_layer()
         println("Working in progress.")
     end
     
