@@ -192,6 +192,9 @@ end
 @inline function push!(X::Heap_layer, content)
     X.size += 1
     
+    if empty(X.summary)
+        println("Working in progress.")
+    end
     
     summary_peek = peek(X.summary)
     sub_heap = summary_peek.key
