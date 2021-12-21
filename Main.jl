@@ -173,7 +173,7 @@ end
     return Out
 end
 
-@inline function split!(X::Base_layer{Dtype, Base_size, cmp})
+@inline function split!(X::Base_layer{Dtype, Base_size, cmp}) where {Dtype, Base_size, cmp}
     #create one new base layers.
     #Assumes full X.
     new_one = Base_layer{Dtype, Base_size, cmp}()
