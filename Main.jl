@@ -259,6 +259,10 @@ end
     # Replace the pointed heap then replace the summary.
 end
 
+@inline function split!(X::Heap_layer{sub_layer, summary_layer}) where {sub_layer, summary_layer}
+    new_summary = split!(X.summary)
+    new_heap = Heap_layer{sub_layer, summary_layer}()
+    new_heap.summary = new_summary
 
 
 
