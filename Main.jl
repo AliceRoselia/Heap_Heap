@@ -197,7 +197,8 @@ end
         new_one = sub_layer()
         push!(new_one, content)
         push!(X.summary, summary_key(new_one, content))
-        println("Working in progress.")
+        return
+        #println("Working in progress.")
     end
     
     summary_peek = peek(X.summary)
