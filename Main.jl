@@ -97,6 +97,7 @@ end
     #println("Working in progress.")
     #Wait, can I also unroll this too? #Later. 
     #=
+    The size is always at least 1 or the case is dealt with separately.
     if X.size == 0
         X.size = 1
         X.data[1] = content
