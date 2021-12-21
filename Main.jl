@@ -28,7 +28,7 @@ Even merging likely not implemented.
 
 
 
-struct summary_key{Sub_heap_type,Dtype}
+struct summary_key{sub_heap_type,Dtype}
     key::sub_heap_type
     data::Dtype
     summary_key(a::sub_heap_type, b::Dtype) where{sub_heap_type, Dtype} = new{sub_heap_type,Dtype}(a,b)
