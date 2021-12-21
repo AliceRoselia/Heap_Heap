@@ -262,7 +262,7 @@ end
     new_summary = split!(X.summary)
     new_heap = Heap_layer{sub_layer, summary_layer}()
     new_heap.summary = new_summary
-    return
+    return new_heap
 end
 
 
