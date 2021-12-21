@@ -196,7 +196,7 @@ end
     if empty(X.summary)
         new_one = sub_layer()
         push!(new_one, content)
-        push!(X.summary, new_one)
+        push!(X.summary, summary_key(new_one, content))
         println("Working in progress.")
     end
     
