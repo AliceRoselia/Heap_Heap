@@ -237,7 +237,7 @@ end
         #println("Working in progress")
         #Todo: make sure the data stays in place. 
     else
-        println(X.summary)
+        #println(X.summary)
         replace!(X.summary, summary_key(sub_heap, peek(sub_heap)))
     end
     return out
