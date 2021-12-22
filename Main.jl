@@ -217,9 +217,10 @@ module Heap_Heap
     end
 
 
-    @inline function length(X::Heap_layer)
+    @inline function length(::Heap_layer)
         #Might not even store X, in which case, it is 0.
         #return X.size
+        error("This implementation does not contain size information")
     end
 
     @inline function empty(X::Heap_layer)
@@ -293,5 +294,14 @@ module Heap_Heap
         debug_print(X.summary)
     end
 
+
+
+    function New_heap(Dtype::Type; layer::Integer=2, cmp::Function = <, base_size::Integer = 64)
+        type = Heap_Heap_type(Dtype,layer, cmp, base_size)
+        return type()
+    end
+
+    
+export New_heap, empty, push!, pop!, peek
 
 end #module Heap_Heap
