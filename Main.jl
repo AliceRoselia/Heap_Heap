@@ -292,3 +292,8 @@ end
     print("summary = ")
     debug_print(X.summary)
 end
+
+function New_heap(Dtype::Type; layer::Integer=2, cmp::Function = <, base_size::Integer = 64)
+    type = Heap_Heap_type(Dtype,layer, cmp, base_size)
+    return type()
+end
