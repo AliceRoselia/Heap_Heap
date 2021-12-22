@@ -1,7 +1,7 @@
 # This is a failing project, this is kept for historical purpose.
 
 # Heap_Heap
-A practical priority queue built with modern hardwar in consideration.
+A practical priority queue built with modern hardware in consideration.
 
 This repository is building in progress.
 
