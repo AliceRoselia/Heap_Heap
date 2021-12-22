@@ -1,14 +1,12 @@
 #This is temporary for test purpose.
 #You should probably ignore it unless you're developing.
 
-using Main
+
 include("Main.jl")
+using Main.Heap_Heap
 
 
-
-Fst_layer_type = Heap_Heap_type(Int, 2, <, 32)
-
-A = Fst_layer_type()
+A = New_heap(Int)
 
 
 
