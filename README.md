@@ -1,5 +1,3 @@
-# This is a failing project, this is kept for historical purpose.
-
 # Heap_Heap
 A practical priority queue built with modern hardware in consideration.
 
