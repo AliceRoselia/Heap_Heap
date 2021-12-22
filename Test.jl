@@ -3,7 +3,7 @@
 
 
 include("Main.jl")
-using Main.Heap_Heap
+using Main
 
 
 A = New_heap(Int)
