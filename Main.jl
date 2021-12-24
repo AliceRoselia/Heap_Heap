@@ -138,7 +138,7 @@ end
     #May replace "end" with "X.size"
     X.data[1:end-1] = X.data[2:end] #May need optimiza tion.I don't know how Julia arrays are implemented.
     X.size -= 1
-    X.data[end] = undef #Free the memory.
+    #X.data[end] = undef #Free the memory.
     return data
     #return the first element.
 end
